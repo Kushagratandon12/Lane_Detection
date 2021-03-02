@@ -53,20 +53,21 @@ plt.show()
 # # plt.imshow(blur)
 # cv2_imshow(canny)
 
-# plt.imshow(img1)
-# height = img1.shape[0]
-# # print(height)
-# # Creates a triangular polygon for the mask defined by three (x, y) coordinates
-# polygons = np.array([
-#     [(0, height), (800, height), (380, 290)]
-# ])
-# # print(polygons)
-# # Creates an image filled with zero intensities with the same dimensions as the img1
-# mask = np.zeros_like(img1)
-# # print('The Image MASK {}'.format(mask))
-# # Allows the mask to be filled with values of 1 and the other areas to be filled with values of 0
-# cv2.fillPoly(mask, polygons, 255)
-# # A bitwise and operation between the mask and img1 keeps only the triangular area of th img2
-# segment = cv2.bitwise_and(img1, mask)
-
-# cv2_imshow(segment)
+plt.imshow(img1)
+plt.show()
+height = img1.shape[0]
+# print(height)
+# Creates a triangular polygon for the mask defined by three (x, y) coordinates
+polygons = np.array([
+    [(0, height), (800, height), (380, 290)]
+])
+# print(polygons)
+# Creates an image filled with zero intensities with the same dimensions as the img1
+mask = np.zeros_like(img1)
+# print('The Image MASK {}'.format(mask))
+# Allows the mask to be filled with values of 1 and the other areas to be filled with values of 0
+cv2.fillPoly(mask, polygons, 255)
+# A bitwise and operation between the mask and img1 keeps only the triangular area of th img2
+segment = cv2.bitwise_and(img1, mask)
+plt.imshow(segment)
+plt.show()
